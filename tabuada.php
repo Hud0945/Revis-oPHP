@@ -20,7 +20,7 @@
     }
 
     if ($tabuada != 0){
-        for ($i = 1; $i <= 9; $i++) {
+        for ($i = 1; $i <= 10; $i++) {
             $resultado = $tabuada * $i;
             echo "$tabuada x $i = $resultado";
             echo "<br>";

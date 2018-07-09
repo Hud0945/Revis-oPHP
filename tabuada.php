@@ -13,18 +13,18 @@
         <button type="submit">Calcular</button>
     </form>
 <?php
-
     $tabuada = 0;
-    if (!empty($_REQUEST['tabuada'])) {
+
+    if (!empty($_REQUEST['tabuada'])){
         $tabuada = $_REQUEST['tabuada'];
     }
-    if ($tabuada > 0 && $tabuada < 10) {
+
+    if ($tabuada != 0){
         for ($i = 1; $i <= 9; $i++) {
             $resultado = $tabuada * $i;
             echo "$tabuada x $i = $resultado";
             echo "<br>";
-    }
-    
+    }    
 }
 ?>
 </body>

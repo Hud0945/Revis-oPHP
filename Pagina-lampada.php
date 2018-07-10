@@ -8,24 +8,26 @@
     <style>
         div {
             text-align :center;
-        }
+        } 
     </style>
 </head>
 <body>
     <div>
         <?php
-            $lampada = 'desligada.jpg';
-            if (!empty($_POST['ligar']) 
-            && $_POST['ligar']=='ligada') {
-                $lampada = 'ligada.jpg';
+            require_once 'Lampada.php';
+            $lampada = new Lampada('desligada.jpg', 'ligada.jpg');
+            if (isset($_POST['desligar'])) {
+                $lampada->desliga();
+            } else {
+                $lampada->liga();
             }
         ?>
-        <img src="<?php echo $lampada ?>">
+        <img src="<?=$lampada->getImagem()?>">
         <form method="post">
-            <button type="submit" name="Ligar" value="ligada">
+            <button type="submit" name="Ligar">
                 Ligar
             </button>
-            <button type="submit" name="Desligar" value="Desligada">
+            <button type="submit" name="desligar">
                 Desligar
             </button>
         </form>

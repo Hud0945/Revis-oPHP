@@ -2,9 +2,9 @@
 
 class Pessoa {
 
-    private $nome;
+    protected $nome;
     private $sexo;
-    private $idade;
+    protected $idade;
 
     function __construct($nome, $sexo, $idade) {
         $this->setNome($nome);

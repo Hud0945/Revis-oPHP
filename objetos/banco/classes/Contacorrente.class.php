@@ -28,6 +28,18 @@ class ContaCorrente extends Conta {
             return true;
         }
         return false;
+
+        if(!is_numeric($valor)) {
+            throw new Exception("Valor dever ser um numero");
+        } else if ($valor <= 0) {
+            throw new Exception("Valor dever ser maior que ZERO");
+        } else if($valor > $saldoVirtual) {
+            throw new Exception("saldo INSUFICIENTE");
+        } else {
+            $novoSaldo = parent::getSaldo() - $valor - self::TAXA;
+            parent::setSaldo($novoSaldo);
+        }
+
     }
 
     public static function getQuantidadeContas() {

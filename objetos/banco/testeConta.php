@@ -13,6 +13,7 @@ require_once 'classes/BancoDB.class.php';
 $rafael = new Cliente();
 $rafael->setNome('Rafael');
 $rafael->setEmail('rafael@gmail.com');
+$rafael->setCpf('12312312312');
 
 $contaRafa = new ContaCorrente();
 $contaRafa->setCliente($rafael);
@@ -21,5 +22,9 @@ $contaRafa->setNumero('99854-7');
 $contaRafa->setSaldo(1000.0);
 $contaRafa->setLimite(500.0);
 
-$banco = new BancoDB();
+    $banco = new BancoDB();
+    $banco->salva($contaRafa);
+
+?>
+<pre> <?php var_dump($banco->listaTodas());?></pre>
 

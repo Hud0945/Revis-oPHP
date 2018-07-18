@@ -47,19 +47,18 @@ abstract class Conta {
     }
 
     public function __toString() {
-        $resultado = '<';
+        $resultado = '->';
         $resultado .= $this->agencia;
         $resultado .= '|';
         $resultado .= $this->numero;
         $resultado .= '|';
         $resultado .= $this->saldo;
         $resultado .= '|';
-        $resultado .= $this->Cliente->getNome();
+        $resultado .= $this->cliente->getNome();
         $resultado .= '|';
         $resultado .= $this->cliente->getCpf();
-        $resultado .= '>';
-        $resultado .= '\n';
-        return $resutaldo;
+        $resultado .= chr(10);
+        return $resultado;
     }
 
 }

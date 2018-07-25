@@ -23,7 +23,7 @@ $contaRafa->setSaldo(1000.0);
 $contaRafa->setLimite(500.0);
 
     $banco = new BancoDB();
-    $banco->salva($contaRafa);
+    $banco->excluiContaPorNumero('1231');
 
 ?>
 <pre> <?php var_dump($banco->listaTodas());?></pre>
